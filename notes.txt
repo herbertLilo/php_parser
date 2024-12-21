@@ -1,6 +1,16 @@
-// Open terminal of container
+// Create containers
+
+docker-compose up
+
+
+
+/////////////////////////////////////// Open terminal of php_parser container
 
 winpty docker exec -it php_parser bash
+
+// Populate DB
+
+php populate_database.php
 
 
 // Insert Data: You can insert data by passing the insert command, table name, and data as a JSON string.
@@ -17,3 +27,15 @@ php manage_database.php update products '{"product_id": "5678"}' 'id = 1'
 
 php manage_database.php delete products 'id = 1'
 
+
+/////////////////////////////////////// Open terminal of php_parser container
+
+winpty docker exec -it mysql_db mysql -u root -prootpassword
+
+USE xml_data;
+
+SHOW TABLES;
+
+SELECT * FROM products LIMIT 10;
+
+SELECT * FROM details_data LIMIT 10;
