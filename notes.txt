@@ -1,0 +1,19 @@
+// Open terminal of container
+
+winpty docker exec -it php_parser bash
+
+
+// Insert Data: You can insert data by passing the insert command, table name, and data as a JSON string.
+
+php manage_database.php insert products '{"product_id": "1234", "bleaching_code": 1, "default_language": "en"}'
+
+
+// Update Data: To update a record, use the update command, provide the table name, new data, and the condition.
+
+php manage_database.php update products '{"product_id": "5678"}' 'id = 1'
+
+
+// Delete Data: For deletion, use the delete command along with the condition for the row to be deleted.
+
+php manage_database.php delete products 'id = 1'
+
